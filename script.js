@@ -1,26 +1,27 @@
 const main = document.querySelector('.main')
 
-let notes = []
-let myNotes = JSON.parse(localStorage.getItem('nota'))
+// let notes = []
+// let myNotes = JSON.parse(localStorage.getItem('nota'))
 
-if (myNotes) {
-    console.log('true')
-    createNotes()
-}
+// if (myNotes) {
+//     
+// }
 
 function createNotes() {
+
     const notesContainer = document.createElement('div')
+    notesContainer.id = 'dsff'
     notesContainer.innerHTML = `
         <div class="notes-Container">
             <input id="title" type="text" placeholder="Title" autocomplete='off'>
             <textarea class="textarea" cols="30" rows="10" placeholder="Type here..."></textarea>
-            <div class="text"></div>
+            <p class="text"></p>
             <i class="fa-solid fa-lock" style="display: none;"></i>
                 <div class="btnContainer">
                     <button class="editBtn">Lock/Edit</button>
                     <button class="deleteBtn">Delete</button>
                 </div>
-            </div>
+        </div>
         `
     main.appendChild(notesContainer)
 
@@ -53,7 +54,6 @@ function createNotes() {
         // Save to local storage
 
         // const textValue = textEl.textContent
-        // console.log(textValue)
         // notes.push({
         //     title: title.value,
         //     text: textValue
